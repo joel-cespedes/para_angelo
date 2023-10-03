@@ -1,0 +1,37 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="staticBackdropLabel">Titulo</h5>
+  </div>
+  <div class="modal-body">
+    <form class="row" [formGroup]="modalForm" (ngSubmit)="onSubmitModal()">
+      <div class="col-12 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div class="invalid-feedback-custom" *ngIf="isValidField('name')">
+          {{ getFieldError('required') }}
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Phone</label>
+        <input type="number" class="form-control" formControlName="number">
+        <div class="invalid-feedback-custom" *ngIf="isValidField('number')">
+          {{ getFieldError('number') }}
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" formControlName="email">
+        <div class="invalid-feedback-custom" *ngIf="isValidField('email')">
+          {{ getFieldError('email') }}
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</div>
