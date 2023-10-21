@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -11,11 +11,25 @@ export class ApiService {
 
   private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) {}
-
-  getData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/ruta-de-la-api`);
+  constructor(private http: HttpClient) {
+    console.log('Servicio de api funcionando')
   }
+
+  // getData(): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/dashboard`);
+  // }
+
+
+
+
+  getInformation(){
+    let headers = new HttpHeaders().set('type-content', 'aplication/json')
+
+    return this.http.get(this.apiUrl, { headers : headers });
+  }
+
+
+
 
 
 }

@@ -1,4 +1,5 @@
-<div class="project-box" style="background-color: #fee4cb;" (click)="openModalSimple()">
+<!-- <div class="project-box" style="background-color: #fee4cb;" (click)="openModalSimple()"> -->
+<div class="project-box" style="background-color: #fee4cb;" (click)="openModal()">
       <div class="project-box-header">
           <span>December 10, 2020</span>
           <div class="more-wrapper">
@@ -37,3 +38,12 @@
           </div>
       </div>
   </div>
+
+
+
+
+  <div class="modal-main-content" @modalAnimation *ngIf="modalSwitch == true">
+    <app-modal-simple></app-modal-simple>
+  </div>
+
+

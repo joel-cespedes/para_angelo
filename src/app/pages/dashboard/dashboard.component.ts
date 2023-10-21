@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ModalSimpleComponent } from 'src/app/shared/modal-simple/modal-simple.component';
+// import { ModalSimpleComponent } from 'src/app/pages/dashboard/modal-simple/modal-simple.component';
 import { ApiService } from 'src/app/services/api.service';
 import { RandomNumberService } from 'src/app/services/random-number.service';
-
+import { RandomNumbersComponent } from './random-numbers/random-numbers.component';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { RandomNumberService } from 'src/app/services/random-number.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
 
   listVisible : boolean = false;
@@ -35,23 +35,7 @@ export class DashboardComponent implements OnInit {
 
 
 
-  currentValues: number[] = [45, 24, 62]; // Inicializa los valores actuales
-
-  constructor(private numberService: RandomNumberService) {}
-
-  ngOnInit(): void {
-    // Suscribe a los valores actuales para los tres elementos
-    for (let i = 0; i < 3; i++) {
-      this.numberService.getCurrentValue(i).subscribe((value) => {
-        this.currentValues[i] = value;
-      });
-    }
-  }
-
-  startRandomChange(index: number): void {
-    // Inicia el cambio aleatorio para el elemento específico
-    this.numberService.startRandomChange(index);
-  }
+  constructor() {}
 
 
 

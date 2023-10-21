@@ -1,6 +1,33 @@
-<div *ngFor="let post of responseData">
-  <h2>{{ post.id }}</h2>
-  <p>{{ post.userId }}</p>
-  <p>{{ post.title }}</p>
-  <p>{{ post.body }}</p>
+<div class="data-api">
+  <div class="data-api-item" *ngFor="let information of apiInformation">
+    <div class="data-api-item-preheader">
+      <div class="data-api-item__id">
+        <p>{{ information.id }}</p>
+      </div>
+    </div>
+    <div class="data-api-item-heading">
+      <div class="data-api-item__userid">
+        <p>{{ information.userId }}</p>
+      </div>
+      <div class="data-api-item__title">
+        <h4>{{ information.title }}</h4>
+      </div>
+    </div>
+    <div class="data-api-item__body">
+      <p>{{ information.body }}</p>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+<!--
+<div *ngFor="let information of apiInformation">
+  <h2>{{ information.id }}</h2>
+  <p>{{ information.userId }}</p>
+  <p>{{ information.title }}</p>
+  <p>{{ information.body }}</p>
+</div> -->

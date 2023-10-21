@@ -3,22 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { ReactiveRoutingModule } from './reactive-routing.module';
 
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CardMainActionsComponent } from './dashboard/card-main-actions/card-main-actions.component';
-import { CardChangeThemeComponent } from './dashboard/card-change-theme/card-change-theme.component';
-import { CardToLoginComponent } from './dashboard/card-to-login/card-to-login.component';
-import { DataApiComponent } from './dashboard/data-api/data-api.component';
+import { ModalFormComponent } from './dashboard/modal-form/modal-form.component';
+
+
 
 
 
 @NgModule({
-  declarations: [
-    CardMainActionsComponent,
-    CardChangeThemeComponent,
-    CardToLoginComponent,
-    DataApiComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveRoutingModule

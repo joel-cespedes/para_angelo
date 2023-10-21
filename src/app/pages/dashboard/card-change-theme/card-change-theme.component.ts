@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Renderer2, ElementRef } from '@angular/core';
+import { Component, EventEmitter, Output, Renderer2, ElementRef, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -16,11 +16,21 @@ export class CardChangeThemeComponent {
     //   this.changeTheme.emit( this.darkMode );
     // }
 
+
     constructor(private renderer: Renderer2, private el: ElementRef) {}
 
-    addClassTheme() {
-      const htmlElement = this.el.nativeElement.ownerDocument.getElementById('myDashboard');
-      this.renderer.addClass(htmlElement, 'dark');
+    toggleClassTheme() {
+
+
+      const htmlElement: HTMLElement | null = this.el.nativeElement.ownerDocument.getElementById('myDashboard');
+      if (htmlElement) {
+        const hasClass = htmlElement.classList.contains('dark');
+        if (hasClass) {
+          this.renderer.removeClass(htmlElement, 'dark');
+        } else {
+          this.renderer.addClass(htmlElement, 'dark');
+        }
+      }
     }
 
 

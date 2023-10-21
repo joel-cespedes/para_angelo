@@ -13,14 +13,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    LoginComponent
+    LoginComponent,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

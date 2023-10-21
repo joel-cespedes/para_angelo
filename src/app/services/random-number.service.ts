@@ -1,46 +1,28 @@
+
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, timer } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RandomNumberService {
+  private numero1: BehaviorSubject<number> = new BehaviorSubject<number>(45);
+  private numero2: BehaviorSubject<number> = new BehaviorSubject<number>(24);
+  private numero3: BehaviorSubject<number> = new BehaviorSubject<number>(62);
 
-  private initialValue = 50;
-  private currentValueSubjects: BehaviorSubject<number>[] = [];
-
-  constructor() {
-    // Inicializa los BehaviorSubject para los tres valores
-    for (let i = 0; i < 3; i++) {
-      this.currentValueSubjects.push(new BehaviorSubject<number>(this.initialValue));
-    }
+  cambiarNumeros() {
+    this.numero1.next(Math.floor(Math.random() * 81));
+    this.numero2.next(Math.floor(Math.random() * 81));
+    this.numero3.next(Math.floor(Math.random() * 81));
   }
 
-  // Método para obtener el valor actual para un índice dado
-  getCurrentValue(index: number): Observable<number> {
-    return this.currentValueSubjects[index].asObservable();
+  getNumero1() {
+    return this.numero1.asObservable();
   }
 
-  // Método para iniciar el cambio aleatorio y restaurar después de 3 segundos para un índice dado
-  startRandomChange(index: number): void {
-    timer(3000)
-      .pipe(
-        switchMap(() => {
-          const randomValue = Math.floor(Math.random() * 81);
-          return timer(0, 100).pipe(
-            map((tick) => {
-              const newValue = this.initialValue + (randomValue - this.initialValue) * (tick / 30);
-              this.currentValueSubjects[index].next(newValue);
-            })
-          );
-        })
-      )
-      .subscribe(() => {
-        this.currentValueSubjects[index].next(this.initialValue);
-      });
+  getNumero2() {
+    return this.numero2.asObservable();
   }
 
-
-
+  getNumero3() {
+    return this.numero3.asObservable();
+  }
 }
