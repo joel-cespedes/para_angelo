@@ -3,6 +3,7 @@ import { ModalService } from 'src/app/services/modal.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
+import { ClicksCounterService } from 'src/app/services/clicks-counter.service';
 
 
 
@@ -23,6 +24,7 @@ import { ModalFormComponent } from '../modal-form/modal-form.component';
       ]),
     ]),
   ],
+  providers: [ClicksCounterService]
 })
 
 
@@ -32,13 +34,20 @@ export class CardModalFormComponent implements OnInit{
 
 
   modalSwitch!: boolean;
+  clickCount: number | undefined;
 
-
-  constructor(private modalForm: ModalService) {
+  constructor(
+    private modalForm: ModalService,
+    private ClicksCounterService: ClicksCounterService
+    ) {
     modalForm.$modalF.subscribe(()=>{
       this.modalSwitch = false;
       console.log("click en cerrar")
-    })
+    });
+
+    this.ClicksCounterService.clickCount$.subscribe((count) => {
+      this.clickCount = count;
+    });
 
   }
 
@@ -53,7 +62,7 @@ export class CardModalFormComponent implements OnInit{
   openModal(){
 
     this.modalSwitch = true;
-
+    this.ClicksCounterService.incrementClick();
 
   }
 

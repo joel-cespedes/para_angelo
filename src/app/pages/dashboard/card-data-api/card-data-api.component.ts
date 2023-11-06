@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ClicksCounterService } from 'src/app/services/clicks-counter.service';
 
-
 @Component({
-  selector: 'app-card-to-login',
-  templateUrl: './card-to-login.component.html',
-  styleUrls: ['./card-to-login.component.scss'],
+  selector: 'app-card-data-api',
+  templateUrl: './card-data-api.component.html',
+  styleUrls: ['./card-data-api.component.scss'],
   providers: [ClicksCounterService]
 })
-export class CardToLoginComponent {
+export class CardDataApiComponent {
 
   clickCount: number | undefined;
 
   constructor(
-    private router: Router,
     private ClicksCounterService: ClicksCounterService
     ) {
       this.ClicksCounterService.clickCount$.subscribe((count) => {
@@ -22,10 +19,11 @@ export class CardToLoginComponent {
       });
     }
 
-  goToLogin() {
-    this.router.navigateByUrl('/login');
-    this.ClicksCounterService.incrementClick();
-  }
+
+    changeDaysLeft() {
+      this.ClicksCounterService.incrementClick();
+    }
+
 
 
 }

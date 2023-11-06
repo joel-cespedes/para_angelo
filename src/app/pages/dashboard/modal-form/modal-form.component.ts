@@ -82,7 +82,10 @@ export class ModalFormComponent implements OnInit{
 
    }
 
-
+   closeModal(){
+    // console.log("click en cerrar")
+    this.modalFormMain.$modalF.emit(false);
+  }
 
   //  closeModal(){
   //   // console.log("click en cerrar")

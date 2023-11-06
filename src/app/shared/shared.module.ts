@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RandomNumbersComponent } from '../pages/dashboard/random-numbers/random-numbers.component';
 import { CardRandomNumbersComponent } from '../pages/dashboard/card-random-numbers/card-random-numbers.component';
+import { CardDataApiComponent } from '../pages/dashboard/card-data-api/card-data-api.component';
 
 
 
@@ -33,7 +34,8 @@ import { CardRandomNumbersComponent } from '../pages/dashboard/card-random-numbe
     DataApiComponent,
     ModalFormComponent,
     RandomNumbersComponent,
-    CardRandomNumbersComponent
+    CardRandomNumbersComponent,
+    CardDataApiComponent
   ],
   exports:[
     HeaderComponent,
@@ -49,7 +51,8 @@ import { CardRandomNumbersComponent } from '../pages/dashboard/card-random-numbe
     BrowserAnimationsModule,
     ModalFormComponent,
     RandomNumbersComponent,
-    CardRandomNumbersComponent
+    CardRandomNumbersComponent,
+    CardDataApiComponent
   ],
   imports: [
     CommonModule,

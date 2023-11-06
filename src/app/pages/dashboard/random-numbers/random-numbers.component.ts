@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomNumberService } from 'src/app/services/random-number.service';
 
-
 @Component({
   selector: 'app-random-numbers',
   templateUrl: './random-numbers.component.html',
@@ -12,6 +11,11 @@ import { RandomNumberService } from 'src/app/services/random-number.service';
 export class RandomNumbersComponent{
 
 
+  constructor(private randomValueService: RandomNumberService) {}
+
+  getValues() {
+    return this.randomValueService.values;
+  }
 
 
 

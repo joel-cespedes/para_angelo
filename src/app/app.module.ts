@@ -7,13 +7,15 @@ import { SharedModule } from './shared/shared.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RandomNumberService } from './services/random-number.service';
+import { ClicksCounterService } from './services/clicks-counter.service';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [RandomNumberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { ModalService } from 'src/app/services/modal.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalSimpleComponent } from '../modal-simple/modal-simple.component';
+import { ClicksCounterService } from 'src/app/services/clicks-counter.service';
 
 
 
@@ -21,6 +22,7 @@ import { ModalSimpleComponent } from '../modal-simple/modal-simple.component';
       ]),
     ]),
   ],
+  providers: [ClicksCounterService]
 })
 
 
@@ -30,13 +32,21 @@ export class CardModalSimpleComponent implements OnInit{
 
 
   modalSwitch!: boolean;
+  clickCount: number | undefined;
 
 
-  constructor(private modalSimple: ModalService) {
+  constructor(
+    private modalSimple: ModalService,
+    private ClicksCounterService: ClicksCounterService
+    ) {
     modalSimple.$modal.subscribe(()=>{
       this.modalSwitch = false;
       console.log("click en cerrar")
-    })
+    });
+
+    this.ClicksCounterService.clickCount$.subscribe((count) => {
+      this.clickCount = count;
+    });
 
   }
 
@@ -52,13 +62,11 @@ export class CardModalSimpleComponent implements OnInit{
 
     this.modalSwitch = true;
 
+    this.ClicksCounterService.incrementClick();
+
 
   }
 
-  // closeModal(){
-  //   console.log("click en cerrar")
-  //   this.modalSimple.$modal.emit(false);
-  // }
 
 
 
