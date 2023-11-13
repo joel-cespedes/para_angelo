@@ -176,7 +176,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
           this.renderer.addClass(htmlElement, 'dark');
         }
 
-        // Guarda el estado del tema en el localStorage.
         this.saveThemeState(!hasClass);
         event.stopPropagation();
       }
@@ -184,13 +183,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     private saveThemeState(isDark: boolean) {
       console.log('Guardar tema en localStorage:', isDark ? 'dark' : 'light');
-      // Guarda el estado del tema en el localStorage.
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
 
     private loadTheme(event: Event) {
       console.log('Cargar tema desde localStorage');
-      // Carga el estado del tema desde el localStorage.
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark') {
         this.renderer.addClass(document.body, 'dark');
