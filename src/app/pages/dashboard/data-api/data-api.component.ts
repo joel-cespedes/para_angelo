@@ -9,26 +9,17 @@ import { ApiService } from '../../../services/api.service';
   templateUrl: './data-api.component.html',
   styleUrls: ['./data-api.component.scss']
 })
-export class DataApiComponent {
-
-  // responseData: any;
-
-  // constructor(private apiService: ApiService) {}
-
-  // ngOnInit(): void {
-  //   this.apiService.getData().subscribe((data) => {
-  //     this.responseData = data;
-  //   });
-  // }
-
-  public apiInformation: Array<any> = [];
+export class DataApiComponent implements OnInit {
 
 
-  constructor ( private ApiService: ApiService ){
-    this.ApiService.getInformation().subscribe((resp:any)=>{
-      console.log(resp)
-      this.apiInformation = resp
-    })
+  apiData: any[] = [];
+
+  constructor(private apiDataService: ApiService) {}
+
+  ngOnInit() {
+    this.apiDataService.apiData$.subscribe(data => {
+      this.apiData = data;
+    });
   }
 
 }

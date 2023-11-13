@@ -1,5 +1,5 @@
 <div class="data-api">
-  <div class="data-api-item" *ngFor="let information of apiInformation">
+  <div class="data-api-item" *ngFor="let information of apiData">
     <div class="data-api-item-preheader">
       <div class="data-api-item__id">
         <p>{{ information.id }}</p>
@@ -20,14 +20,3 @@
 </div>
 
 
-
-
-
-
-<!--
-<div *ngFor="let information of apiInformation">
-  <h2>{{ information.id }}</h2>
-  <p>{{ information.userId }}</p>
-  <p>{{ information.title }}</p>
-  <p>{{ information.body }}</p>
-</div> -->

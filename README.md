@@ -26,13 +26,13 @@ La aplicación solo tendra 2 paginas... 1. la home, 2 formulario..
 
 ------------ el header debe ser un componente
 
-- el boton de fecha, (el que esta en el footer de cada cuadro de color, el que dice "2 Days Left") al darle click a ese componente debe aumentar el día. Ejemplo si está en "2 Days Left" aumentarlo a "3 Days Left" luego "4 Days Left" cuando llegue a 9 debe regresar a "1 Days Left"
+------------ el boton de fecha, (el que esta en el footer de cada cuadro de color, el que dice "2 Days Left") al darle click a ese componente debe aumentar el día. Ejemplo si está en "2 Days Left" aumentarlo a "3 Days Left" luego "4 Days Left" cuando llegue a 9 debe regresar a "1 Days Left"
 
 ------------ La sección "Client Messages", debe dividise en el componente que engloba los item de los mensajes (padre de los mensajes), otro componente de cada mensaje, luego otro componente para la foto del avatar (componente nieto). Por lo que los mensajes deben ser un array
 
 ------------ Los cuadros de colores deben ser un componente reutilizable, por lo que debe haber un array con la data para que los cuadros de botones se pinten en un for (este array es de un objeto que debe tener color, id, titulo, etc, lo que tu veas)
 
-- el buscador debe buscar de alguna manera los cuadros de colores y mostrarlos o no segun lo que busques en el buscador del header (todo reactivamente)
+------------ el buscador debe buscar de alguna manera los cuadros de colores y mostrarlos o no segun lo que busques en el buscador del header (todo reactivamente)
 
 ------------ Los iconos feather-list y feather-grid deben acomodar los cuadros de colores para que se muestren como listas hacia abajo o como se ven original
 

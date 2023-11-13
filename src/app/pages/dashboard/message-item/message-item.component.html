@@ -1,11 +1,13 @@
-<div class="message-box" *ngFor="let messages of message">
-  <img src=" https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80 " alt="profile image">
+<div class="message-box">
+  <!-- <img src=" https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80 " alt="profile image"> -->
+  <app-image-message [photoUrl]="messageData.photoUrl"></app-image-message>
   <div class="message-content">
       <div class="message-header">
-          <div class="name">{{ messages.name }}</div>
+          <app-usser-name-message [userName]="messageData.userName"></app-usser-name-message>
+
           <div class="star-checkbox">
-              <input type="checkbox" id="star-1">
-              <label for="star-1">
+              <input type="checkbox" [id]="'star' + '-' + index">
+              <label [for]="'star' + '-' + index">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round" class="feather feather-star">
@@ -15,11 +17,14 @@
               </label>
           </div>
       </div>
-      <p class="message-line">
-        {{ messages.coments }}
-      </p>
-      <p class="message-line time">
-        {{ messages.date }}
-      </p>
+
+      <app-message-text [messageText]="messageData.messageText"></app-message-text>
+
+      <p class="message-line time">Dec, 12</p>
   </div>
 </div>
+
+
+
+
+

@@ -1,0 +1,15 @@
+
+
+
+
+
+<div class="app-sidebar">
+  <a href="" class="app-sidebar-link" *ngFor="let svgCode of svgIcons; let i = index" [class.active]="activeItem === i + 1" (click)="setActiveItem(i + 1)">
+    <div [innerHTML]="sanitizeSVG(svgCode)"></div>
+  </a>
+
+</div>
+
+
+
+

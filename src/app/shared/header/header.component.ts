@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+
 
 @Component({
   selector: 'app-dashboard-header',
@@ -8,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  filtroGlobal: string = '';
+  filtro: string = '';
+
+
+
 }
+

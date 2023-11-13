@@ -5,10 +5,6 @@ import { ReactiveRoutingModule } from './reactive-routing.module';
 
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModalFormComponent } from './dashboard/modal-form/modal-form.component';
-
-
-
 
 
 @NgModule({

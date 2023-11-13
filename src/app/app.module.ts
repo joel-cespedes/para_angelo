@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomNumberService } from './services/random-number.service';
-import { ClicksCounterService } from './services/clicks-counter.service';
+import { MessageModuleModule } from './pages/dashboard/message-module/message-module.module';
+import { ThemeService } from './services/theme.service';
 
 
 
@@ -23,10 +24,12 @@ import { ClicksCounterService } from './services/clicks-counter.service';
     SharedModule,
     ReactiveFormsModule,
     LoginComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessageModuleModule,
+    FormsModule
 
   ],
-  providers: [RandomNumberService],
+  providers: [RandomNumberService, ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

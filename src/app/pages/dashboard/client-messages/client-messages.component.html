@@ -1,3 +1,4 @@
 <div class="messages">
-  <app-message-item></app-message-item>
+  <app-message-item *ngFor="let message of messages; let i = index" [messageData]="message" [index]="i"></app-message-item>
+
 </div>

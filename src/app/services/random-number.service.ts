@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RandomNumberService {
 
-  values: number[] = [14, 34, 65];
+  values: number[] = [45, 24, 62];
 
   generateRandomValues() {
     this.values = [
@@ -18,7 +18,7 @@ export class RandomNumberService {
   }
 
   resetValuesToInitialState() {
-    this.values = [14, 34, 65];
+    this.values = [45, 24, 62];
   }
 
 }
